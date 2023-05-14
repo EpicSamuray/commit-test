@@ -34,8 +34,8 @@ Um die Applikation zu Testen gibt es Verschiedene arten.
 
 2.  **Das Testen mit dem Dev Modus**
     *   Wenn man sich im **Dev Modus** werden die Test standart mässig nicht durchgeführt sie sind Pausiert. Mit der Taste `r` können die tests durchgeführt werden. 
-    *   Nach dem ausführen des befehls für denn Dev Modus ![Quarkus Test Paused](/github/assets/quarkus-testPaused.png)
-    *   Nach dem drücken der Taste `r` ![Quarkus Test Runs](/github/assets/quarkus-testRuned.png)
+    *   Nach dem ausführen des befehls für denn Dev Modus ![Quarkus Test Paused](/.github/assets/quarkus-testPaused.png)
+    *   Nach dem drücken der Taste `r` ![Quarkus Test Runs](/.github/assets/quarkus-testRuned.png)
 
 ---
 ## Eine Ausführbare jar erstellen
