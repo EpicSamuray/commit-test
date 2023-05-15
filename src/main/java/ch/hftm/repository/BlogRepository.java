@@ -1,28 +1,13 @@
 package ch.hftm.repository;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import ch.hftm.model.Blog;
+import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
+import lombok.NoArgsConstructor;
 
 @ApplicationScoped
-public class BlogRepository {
+@NoArgsConstructor
+public class BlogRepository implements PanacheRepository<Blog>{
 
-    private static List<Blog> blogs = new ArrayList<>();
-
-    public BlogRepository() {
-        blogs.add(new Blog("First Blog", "This is my First blog"));
-        blogs.add(new Blog("Second Blog", "This is my Second blog"));
-
-    }
-
-    public static List<Blog> getBlogs() {
-        return blogs;
-    }
-
-    public static void addBlog(Blog blog) {
-        blogs.add(blog);
-    }
     
 }

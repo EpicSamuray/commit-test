@@ -1,4 +1,4 @@
-package ch.hftm;
+package ch.hftm.resource;
 
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.GET;

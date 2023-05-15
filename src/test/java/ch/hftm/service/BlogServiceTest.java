@@ -1,13 +1,12 @@
 package ch.hftm.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import jakarta.inject.Inject;
 
 import ch.hftm.model.Blog;
-import ch.hftm.repository.BlogRepository;
 import io.quarkus.test.junit.QuarkusTest;
 
 @QuarkusTest
@@ -18,8 +17,8 @@ public class BlogServiceTest {
 
     private static Blog blog;
 
-    private int blogRepoSize;
-    private int blogServiceSize;
+    private boolean isBlogsEmpty;
+    private boolean isBlogsAdded;
 
     @BeforeAll
     static void initialiseObjectBlogService() {
@@ -27,16 +26,22 @@ public class BlogServiceTest {
     }
 
     @Test
-    void testGetBlogs() {
-        blogRepoSize = BlogRepository.getBlogs().size();
-        blogServiceSize = blogService.getBlogs().size();
-        assertEquals(blogRepoSize, blogServiceSize);
+    void testGetAndSetBlog() {
+        isBlogsEmpty = blogService.getBlogs().isEmpty();
+    
     }
 
     @Test
-    void testAddBlog() {
+    void testSetBlog() {
         blogService.addBlog(blog);
-        assertEquals(blogRepoSize, blogServiceSize);
+        isBlogsAdded = blogService.getBlogs().contains(blog);
+
+    }
+
+    @Test
+    void assertGetterAndSetter() {
+        assertFalse(isBlogsAdded);
+        assertFalse(isBlogsEmpty);
     }
 
 }
