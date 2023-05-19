@@ -1,4 +1,4 @@
-package ch.hftm;
+package ch.hftm.resource;
 
 import org.junit.jupiter.api.Test;
 import io.quarkus.test.junit.QuarkusTest;
