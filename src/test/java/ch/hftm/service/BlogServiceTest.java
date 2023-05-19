@@ -26,8 +26,9 @@ public class BlogServiceTest {
     }
 
     @Test
-    void testGetAndSetBlog() {
+    void testGetBlog() {
         isBlogsEmpty = blogService.getBlogs().isEmpty();
+        assertFalse(isBlogsEmpty);
     
     }
 
@@ -35,13 +36,8 @@ public class BlogServiceTest {
     void testSetBlog() {
         blogService.addBlog(blog);
         isBlogsAdded = blogService.getBlogs().contains(blog);
-
-    }
-
-    @Test
-    void assertGetterAndSetter() {
         assertFalse(isBlogsAdded);
-        assertFalse(isBlogsEmpty);
+
     }
 
 }
