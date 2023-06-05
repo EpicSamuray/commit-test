@@ -28,4 +28,6 @@ public class BlogService {
         logger.info("Adding blog " + blog.getTitle());
         blogRpy.persist(blog);
     }
+
+
 }

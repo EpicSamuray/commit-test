@@ -1,8 +1,6 @@
 package ch.hftm.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -22,8 +20,12 @@ public class Blog implements Comparable<Blog>{
 
     @NonNull
     private String title;
+
     @NonNull
     private String description;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Author author;
 
     @Override
     public int compareTo(Blog t) {
